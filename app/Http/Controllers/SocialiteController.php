@@ -38,6 +38,13 @@ class SocialiteController extends Controller
             return redirect('/');
         }
 
+        if($userFromDatabase->role == 'admin'){
+            auth('web')->login($userFromDatabase);
+            session()->regenerate();
+
+            return redirect('/dashboard');
+        }
+        
         // Jika ada user langsung login saja
         auth('web')->login($userFromDatabase);
         session()->regenerate();
