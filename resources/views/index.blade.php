@@ -19,6 +19,10 @@
           </div>
           <div class="text-center mb-6">
             <a href="/test" class="hover:underline italic">Test SIBATIK AI</a>
+            <br>
+            @if(auth('web')->user()->role == 'admin')
+              <a href="/dashboard" class="hover:underline italic">Dashboard</a>
+            @endif
           </div>
           <div class="flex justify-center items-center">
             <form action="{{ route('logout') }}" method="post">
