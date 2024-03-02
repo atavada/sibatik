@@ -1,5 +1,3 @@
-![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=sibatik.visitor-badge)
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
