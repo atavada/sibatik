@@ -13,18 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+// User
 Route::get('/', function () {
-    return view('index');
-})->name('index');
+    return view('user.index');
+})->name('user.index');
 
 
 // Gemini AI
 Route::post('/generate-text', [App\Http\Controllers\GeminiController::class, 'generateText'])
     ->name('generateText');
+
 Route::get('/test', [App\Http\Controllers\GeminiController::class, 'showForm'])
     ->name('showForm');
 
@@ -41,3 +40,8 @@ Route::get('login/google/callback', [App\Http\Controllers\SocialiteController::c
 Route::post('logout', [App\Http\Controllers\SocialiteController::class, 'logout'])
     ->middleware(['auth'])
     ->name('logout');
+
+
+// Admin
+Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');
+Route::resource('/dashboard/user', App\Http\Controllers\Admin\UserController::class, ['except' => ['show'] ,'as' => 'admin']);
