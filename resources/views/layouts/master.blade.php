@@ -7,7 +7,7 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Tenun Mulya</title>
+	<title>Tenun Mulya &mdash; @yield('title')</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="#">
@@ -30,6 +30,8 @@
 	<link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
 	<!-- responsive -->
 	<link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+
+	@stack('style')
 
 </head>
 <body>
@@ -162,6 +164,8 @@
 		</div>
 	</div>
 	<!-- end copyright -->
+
+	@stack('scripts')
 	
 	<!-- jquery -->
 	<script src="{{ asset('frontend/js/jquery-1.11.3.min.js') }}"></script>

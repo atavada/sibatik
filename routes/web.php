@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('user.index');
 })->name('user.index');
 
+Route::get('/sign-in', function () {
+    return view('auth.signin');
+})->name('auth.signin');
+
 
 // Gemini AI
 Route::post('/generate-text', [App\Http\Controllers\GeminiController::class, 'generateText'])
