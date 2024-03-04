@@ -53,7 +53,7 @@
                                 <h4>Product</h4>
                             </div>
                             <div class="card-body">
-                                1,201
+                                {{ App\Models\Product::count() ?? '0' }}
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                                 <h4>Contact</h4>
                             </div>
                             <div class="card-body">
-                                47
+                                {{ App\Models\Message::count() ?? '0' }}
                             </div>
                         </div>
                     </div>
