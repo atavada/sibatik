@@ -18,11 +18,9 @@
                 <img alt="image"
                     src="{{ asset('admin/img/avatar/avatar-1.png') }}"
                     class="rounded-circle mr-1">
-                {{-- <div class="d-sm-none d-lg-inline-block">Hi, {{ auth('web')->user()->name }}</div> --}}
+                <div class="d-sm-none d-lg-inline-block">Hi, {{ auth('web')->user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                {{-- <div class="dropdown-title">{{ auth('web')->user()->email }}</div> --}}
-                <div class="dropdown-divider"></div>
                 <a href="features-settings.html"
                     class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i> Settings
