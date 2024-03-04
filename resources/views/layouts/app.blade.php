@@ -28,21 +28,33 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="main-wrapper">
-            <!-- Header -->
-            @include('components.header')
+    @auth
+        @if(auth('web')->user()->role == 'admin')
+            <div id="app">
+                <div class="main-wrapper">
+                    <!-- Header -->
+                    @include('components.header')
 
-            <!-- Sidebar -->
-            @include('components.sidebar')
+                    <!-- Sidebar -->
+                    @include('components.sidebar')
 
-            <!-- Content -->
-            @yield('main')
+                    <!-- Content -->
+                    @yield('main')
 
-            <!-- Footer -->
-            @include('components.footer')
-        </div>
-    </div>
+                    <!-- Footer -->
+                    @include('components.footer')
+                </div>
+            </div>
+        @else
+            <script>
+                window.location = "{{ route('user.index') }}";
+            </script>
+        @endif
+        @else
+            <script>
+                window.location = "{{ route('user.index') }}";
+            </script>
+    @endauth
 
     <!-- General JS Scripts -->
     <script src="{{ asset('admin/library/jquery/dist/jquery.min.js') }}"></script>
