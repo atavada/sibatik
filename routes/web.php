@@ -46,6 +46,8 @@ Route::post('logout', [App\Http\Controllers\SocialiteController::class, 'logout'
     ->name('logout');
 
 
-// Admin
-Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');
-Route::resource('/dashboard/user', App\Http\Controllers\Admin\UserController::class, ['except' => ['show'] ,'as' => 'admin']);
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    // Admin
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard.index');
+    Route::resource('/dashboard/user', App\Http\Controllers\Admin\UserController::class, ['except' => ['show'] ,'as' => 'admin']);
+});
