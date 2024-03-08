@@ -27,7 +27,10 @@ Feature:
 -   Profile
 -   Catalog
 -   Detail Product
+-   Rating
 -   Contact
+-   Google Auth
+-   SIBATIK Chat AI
 
 ### Built With
 
