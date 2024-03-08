@@ -67,8 +67,20 @@
 								<li><a href="contact.html">Contact</a></li>
 								<li>
 									<div class="header-icons">
-										<a href="#">Join us</a>
-										<a href="#">Sign in</a>
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+											@csrf
+										</form>
+										@auth
+											@if(auth('web')->user()->role == 'admin')
+												<a onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+												<a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
+											@else
+												<a onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+											@endif
+											@else
+												<a href="{{ route('auth.signin') }}">Join us</a>
+												<a href="{{ route('auth.signin') }}">Sign in</a>
+										@endauth
 									</div>
 								</li>
 							</ul>
