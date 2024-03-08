@@ -10,12 +10,12 @@ use Spatie\Permission\Models\Role;
 class UserController extends Controller
 {
     /**
-     * __construct
-     */
-    // public function __construct()
-    // {
-    //     $this->middleware(['permission:users.index|users.create|users.edit|users.delete']);
-    // }
+    * __construct
+    */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
