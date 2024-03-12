@@ -13,17 +13,17 @@
             </li>
 
             <li class="menu-header">App</li>
-            <li class="{{ $type_menu === 'profile' ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i class="fas fa-address-card"></i><span>Profile</span></a>
-            </li>
-            <li class="{{ $type_menu === 'contact' ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i class="fas fa-link"></i><span>Social Media</span></a>
+            <li class="{{ $type_menu === 'about' ? 'active' : '' }}">
+                <a href="{{ route('admin.about.index') }}" class="nav-link"><i class="fas fa-address-card"></i><span>About</span></a>
             </li>
             <li class="{{ $type_menu === 'product' ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i class="fas fa-box"></i><span>Product</span></a>
+                <a href="{{ route('admin.product.index') }}" class="nav-link"><i class="fas fa-box"></i><span>Produk</span></a>
+            </li>
+            <li class="{{ $type_menu === 'category' ? 'active' : '' }}">
+                <a href="{{ route('admin.category.index') }}" class="nav-link"><i class="fas fa-folder"></i><span>Kategori</span></a>
             </li>
             <li class="{{ $type_menu === 'message' ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i class="fas fa-address-book"></i><span>Contact</span></a>
+                <a href="#" class="nav-link"><i class="fas fa-address-book"></i><span>Kontak</span></a>
             </li>
             
             <li class="menu-header">User Management</li>
