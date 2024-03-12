@@ -23,7 +23,7 @@
         
                 <div class="card">
                     <div class="card-header">
-                        <h4></i> Users</h4>
+                        <h4>Users</h4>
                     </div>
         
                     <div class="card-body">
@@ -58,7 +58,11 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            <label class="badge badge-success">{{ $user->role }}</label>
+                                            @if ($user->role == 'admin')
+                                                <label class="badge badge-success">{{ $user->role }}</label>
+                                            @else
+                                                <label class="badge badge-info">{{ $user->role }}</label>
+                                            @endif
                                         </td>
                                         <td style="text-align: center">{{ $user->created_at }}</td>
                                         <td class="text-center">
@@ -86,6 +90,67 @@
 
 @push('scripts')
     <!-- JS Libraies -->
-
+        <script>
+            //ajax delete
+            function Delete(id)
+                {
+                    var id = id;
+                    var token = $("meta[name='csrf-token']").attr("content");
+        
+                    swal({
+                        title: "APAKAH KAMU YAKIN ?",
+                        text: "INGIN MENGHAPUS DATA INI!",
+                        icon: "warning",
+                        buttons: [
+                            'TIDAK',
+                            'YA'
+                        ],
+                        dangerMode: true,
+                    }).then(function(isConfirm) {
+                        if (isConfirm) {
+        
+                            //ajax delete
+                            jQuery.ajax({
+                                url: "{{ route("admin.user.index") }}/"+id,
+                                data:     {
+                                    "id": id,
+                                    "_token": token
+                                },
+                                type: 'DELETE',
+                                success: function (response) {
+                                    if (response.status == "success") {
+                                        swal({
+                                            title: 'BERHASIL!',
+                                            text: 'DATA BERHASIL DIHAPUS!',
+                                            icon: 'success',
+                                            timer: 1000,
+                                            showConfirmButton: false,
+                                            showCancelButton: false,
+                                            buttons: false,
+                                        }).then(function() {
+                                            location.reload();
+                                        });
+                                    }else{
+                                        swal({
+                                            title: 'GAGAL!',
+                                            text: 'DATA GAGAL DIHAPUS!',
+                                            icon: 'error',
+                                            timer: 1000,
+                                            showConfirmButton: false,
+                                            showCancelButton: false,
+                                            buttons: false,
+                                        }).then(function() {
+                                            location.reload();
+                                        });
+                                    }
+                                }
+                            });
+        
+                        } else {
+                            return true;
+                        }
+                    })
+                }
+        </script>
     <!-- Page Specific JS File -->
 @endpush
