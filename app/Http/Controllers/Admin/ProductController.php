@@ -94,8 +94,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $this->validate($request, [
-            'image' => 'image|max:2048',
-            'name' => 'required'.$product->id,
+            'name' => 'required',
             'description' => 'required',
             'price' => 'required',
             // 'shopee_url' => 'required',
@@ -133,6 +132,12 @@ class ProductController extends Controller
                 'category_id' => $request->input('category_id'),
                 'status' => $request->input('status')
             ]);
+        }
+
+        if($product){
+            return redirect()->route('admin.product.index')->with(['success' => 'Data Berhasil Diupdate!']);
+        }else{
+            return redirect()->route('admin.product.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

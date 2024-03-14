@@ -34,6 +34,7 @@
                             <div class="form-group">
                                 <label>GAMBAR</label>
                                 <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+                                <div class="form-text text-muted">The image must have a maximum size of 2MB</div>
 
                                 @error('image')
                                 <div class="invalid-feedback" style="display: block">
@@ -99,7 +100,7 @@
 
                             <div class="form-group">
                                 <label>KATEGORI</label>
-                                <select class="form-control select-category @error('category_id') is-invalid @enderror" name="category_id">
+                                <select class="form-control selectric @error('category_id') is-invalid @enderror" name="category_id">
                                     <option value="">-- PILIH KATEGORI --</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -114,7 +115,7 @@
 
                             <div class="form-group">
                                 <label>STATUS</label>
-                                <select class="form-control @error('status') is-invalid @enderror" name="status">
+                                <select class="form-control selectric @error('status') is-invalid @enderror" name="status">
                                     <option value="">-- PILIH STATUS --</option>
                                     <option value="publish">PUBLISH</option>
                                     <option value="draft">DRAFT</option>

@@ -63,9 +63,9 @@
                                         <td>{{ $product->category->name }}</td>
                                         <td>
                                             @if ($product->status == 'publish')
-                                                <label class="badge badge-success">{{ $product->status }}</label>
+                                                <label class="badge badge-success">published</label>
                                             @else
-                                                <label class="badge badge-danger">{{ $product->status }}</label>
+                                                <label class="badge badge-danger">draft</label>
                                             @endif
                                         </td>
                                         <td class="text-center">

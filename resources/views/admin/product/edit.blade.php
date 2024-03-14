@@ -35,6 +35,13 @@
                             <div class="form-group">
                                 <label>GAMBAR</label>
                                 <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+                                <div class="form-text text-muted">The image must have a maximum size of 2MB</div>
+                                
+                                @error('image')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -115,8 +122,8 @@
                                 <label>STATUS</label>
                                 <select class="form-control @error('status') is-invalid @enderror" name="status">
                                     <option value="">-- PILIH STATUS --</option>
-                                    <option value="PUBLISH" {{ old('status', $product->status) == 'PUBLISH' ? 'selected' : '' }}>PUBLISH</option>
-                                    <option value="DRAFT" {{ old('status', $product->status) == 'DRAFT' ? 'selected' : '' }}>DRAFT</option>
+                                    <option value="publish" {{ old('status', $product->status) == 'publish' ? 'selected' : '' }}>PUBLISH</option>
+                                    <option value="draft" {{ old('status', $product->status) == 'draft' ? 'selected' : '' }}>DRAFT</option>
                                 </select>
 
                                 @error('status')
