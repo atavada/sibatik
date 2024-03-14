@@ -14,14 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// Auth
+Route::get('/sign-in', function () {
+    return view('auth.signin');
+})->name('auth.signin');
+
+
 // User
 Route::get('/', function () {
     return view('user.index');
 })->name('user.index');
-
-Route::get('/sign-in', function () {
-    return view('auth.signin');
-})->name('auth.signin');
 
 
 // Gemini AI
@@ -52,5 +54,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('/dashboard/about', App\Http\Controllers\Admin\AboutController::class, ['except' => ['show'], 'as' => 'admin']);
     Route::resource('/dashboard/product', App\Http\Controllers\Admin\ProductController::class, ['except' => ['show'], 'as' => 'admin']);
     Route::resource('/dashboard/category', App\Http\Controllers\Admin\CategoryController::class, ['except' => ['show'], 'as' => 'admin']);
+    Route::resource('/dashboard/rating', App\Http\Controllers\Admin\RatingController::class, ['except' => ['show'], 'as' => 'admin']);
+    Route::resource('/dashboard/contact', App\Http\Controllers\Admin\ContactController::class, ['except' => ['show'], 'as' => 'admin']);
     Route::resource('/dashboard/user', App\Http\Controllers\Admin\UserController::class, ['except' => ['show'], 'as' => 'admin']);
 });

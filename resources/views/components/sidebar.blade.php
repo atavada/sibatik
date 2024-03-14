@@ -22,8 +22,11 @@
             <li class="{{ $type_menu === 'category' ? 'active' : '' }}">
                 <a href="{{ route('admin.category.index') }}" class="nav-link"><i class="fas fa-folder"></i><span>Kategori</span></a>
             </li>
-            <li class="{{ $type_menu === 'message' ? 'active' : '' }}">
-                <a href="#" class="nav-link"><i class="fas fa-address-book"></i><span>Kontak</span></a>
+            <li class="{{ $type_menu === 'rating' ? 'active' : '' }}">
+                <a href="{{ route('admin.rating.index') }}" class="nav-link"><i class="fas fa-star"></i><span>Rating</span></a>
+            </li>
+            <li class="{{ $type_menu === 'contact' ? 'active' : '' }}">
+                <a href="{{ route('admin.contact.index') }}" class="nav-link"><i class="fas fa-address-book"></i><span>Kontak</span></a>
             </li>
             
             <li class="menu-header">User Management</li>
