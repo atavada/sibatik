@@ -80,8 +80,7 @@ class AboutController extends Controller
     public function update(Request $request, About $about)
     {
         $this->validate($request, [
-            'title' => 'required'.$about->id,
-            'image' => 'required|max:2048',
+            'title' => 'required',
             'description' => 'required'
         ]);
 
@@ -103,6 +102,12 @@ class AboutController extends Controller
                 'image' => $image->hashName(),
                 'description' => $request->input('description')
             ]);
+        }
+
+        if ($about) {
+            return redirect()->route('admin.about.index')->with(['success' => 'Data Berhasil Diupdate!']);
+        } else {
+            return redirect()->route('admin.about.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 

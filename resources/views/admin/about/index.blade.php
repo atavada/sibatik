@@ -27,22 +27,23 @@
                     </div>
         
                     <div class="card-body">
-                        <form action="{{ route('admin.about.index') }}" method="GET">
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        @if (App\Models\About::count() < 1)
+                        @if (App\Models\About::count() < 1)
+                            <form action="{{ route('admin.about.index') }}" method="GET">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
                                             <a href="{{ route('admin.about.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
-                                        @endif
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        @endif
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
                                     <th scope="col">ISI ABOUT</th>
+                                    <th scope="col" style="width: 15%;text-align: center">UPDATED AT</th>
                                     <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                                 </tr>
                                 </thead>
@@ -50,6 +51,7 @@
                                 @foreach ($abouts as $no => $about)
                                     <tr>
                                         <td>{!! $about->description !!}</td>
+                                        <td class="text-center">{{ $about->updated_at }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('admin.about.edit', $about->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
