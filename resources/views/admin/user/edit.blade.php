@@ -1,5 +1,10 @@
 @extends('layouts.app')
+
 @section('title', 'Edit User')
+
+@push('style')
+    <!-- CSS Libraries -->
+@endpush
 
 @section('main')
     <div class="main-content">
@@ -19,7 +24,7 @@
         
                 <div class="card">
                     <div class="card-header">
-                        <h4></i> Edit User</h4>
+                        <h4>Edit User</h4>
                     </div>
         
                     <div class="card-body">
@@ -73,4 +78,10 @@
             </div>
         </section>
     </div>
-@stop
+@endsection
+
+@push('scripts')
+    <!-- JS Libraies -->
+
+    <!-- Page Specific JS File -->
+@endpush
