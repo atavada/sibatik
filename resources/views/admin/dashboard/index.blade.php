@@ -68,7 +68,7 @@
                                 <h4>Contact</h4>
                             </div>
                             <div class="card-body">
-                                {{ App\Models\Message::count() ?? '0' }}
+                                {{ App\Models\Contact::count() ?? '0' }}
                             </div>
                         </div>
                     </div>

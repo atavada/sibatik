@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Users')
+@section('title', 'Product')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -10,12 +10,12 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Users</h1>
+                <h1>Produk</h1>
 
                 <!-- Breadcrumb -->
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
-                    <div class="breadcrumb-item">Users</div>
+                    <div class="breadcrumb-item">Produk</div>
                 </div>
             </div>
         
@@ -23,15 +23,18 @@
         
                 <div class="card">
                     <div class="card-header">
-                        <h4>Users</h4>
+                        <h4>Produk</h4>
                     </div>
         
                     <div class="card-body">
-                        <form action="{{ route('admin.user.index') }}" method="GET">
+                        <form action="{{ route('admin.product.index') }}" method="GET">
                             <div class="form-group">
                                 <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <a href="{{ route('admin.product.create') }}" class="btn btn-primary" style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                    </div>
                                     <input type="text" class="form-control" name="q"
-                                            placeholder="cari berdasarkan nama user">
+                                            placeholder="cari berdasarkan nama produk">
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> CARI
                                         </button>
@@ -44,41 +47,41 @@
                                 <thead>
                                 <tr>
                                     <th scope="col" style="text-align: center;width: 6%">NO.</th>
-                                    <th scope="col">NAME</th>
-                                    <th scope="col">EMAIL</th>
-                                    <th scope="col">ROLE</th>
-                                    <th scope="col" style="width: 15%;text-align: center">CREATED AT</th>
-                                    <th scope="col" style="width: 15%;text-align: center">ACTION</th>
+                                    <th scope="col">NAMA PRODUK</th>
+                                    <th scope="col">HARGA</th>
+                                    <th scope="col">KATEGORI</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($users as $no => $user)
+                                @foreach ($products as $no => $product)
                                     <tr>
-                                        <th scope="row" style="text-align: center">{{ ++$no + ($users->currentPage()-1) * $users->perPage() }}</th>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
+                                        <th scope="row" style="text-align: center">{{ ++$no + ($products->currentPage()-1) * $products->perPage() }}</th>
+                                        <td>{{ $product->name }}</td>
+                                        <td>Rp. {{ $product->price }}</td>
+                                        <td>{{ $product->category->name }}</td>
                                         <td>
-                                            @if ($user->role == 'admin')
-                                                <label class="badge badge-success">{{ $user->role }}</label>
+                                            @if ($product->status == 'publish')
+                                                <label class="badge badge-success">published</label>
                                             @else
-                                                <label class="badge badge-info">{{ $user->role }}</label>
+                                                <label class="badge badge-danger">draft</label>
                                             @endif
                                         </td>
-                                        <td style="text-align: center">{{ $user->created_at }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                            <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $user->id }}">
+                                            <button onClick="Delete(this.id)" class="btn btn-sm btn-danger" id="{{ $product->id }}">
                                                 <i class="fa fa-trash"></i>
-                                            </button>
+                                            </button>  
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             <div style="text-align: center">
-                                {{$users->links("vendor.pagination.bootstrap-5")}}
+                                {{$products->links("vendor.pagination.bootstrap-5")}}
                             </div>
                         </div>
                     </div>
@@ -111,7 +114,7 @@
         
                             //ajax delete
                             jQuery.ajax({
-                                url: "{{ route("admin.user.index") }}/"+id,
+                                url: "{{ route("admin.product.index") }}/"+id,
                                 data:     {
                                     "id": id,
                                     "_token": token
