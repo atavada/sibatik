@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
 	<!-- responsive -->
 	<link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 	@stack('style')
 
@@ -52,7 +53,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html" class="boxed-btn">
+							<a href="index" class="boxed-btn">
 								LOGO SIBATIK
 							</a>
 						</div>
@@ -62,9 +63,9 @@
 						<nav class="main-menu">
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Catalog</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="about">About</a></li>
+								<li><a href="catalog">Catalog</a></li>
+								<li><a href="contact">Contact</a></li>
 								<li>
 									<div class="header-icons">
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -134,10 +135,10 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Catalog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index">Home</a></li>
+							<li><a href="about">About</a></li>
+							<li><a href="catalog">Catalog</a></li>
+							<li><a href="contact">Contact</a></li>
 						</ul>
 					</div>
 				</div>

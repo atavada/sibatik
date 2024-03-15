@@ -19,6 +19,22 @@ Route::get('/', function () {
     return view('user.index');
 })->name('user.index');
 
+Route::get('/about', function () {
+    return view('user.about');
+})->name('user.about');
+
+Route::get('/contact', function () {
+    return view('user.contact');
+})->name('user.contact');
+
+Route::get('/catalog', function () {
+    return view('user.catalog');
+})->name('user.catalog');
+
+Route::get('/detail', function () {
+    return view('user.detail');
+})->name('user.detail');
+
 Route::get('/sign-in', function () {
     return view('auth.signin');
 })->name('auth.signin');
@@ -40,6 +56,7 @@ Route::get('login/google/redirect', [App\Http\Controllers\SocialiteController::c
 Route::get('login/google/callback', [App\Http\Controllers\SocialiteController::class, 'callback'])
     ->middleware(['guest'])
     ->name('callback');
+
 
 Route::post('logout', [App\Http\Controllers\SocialiteController::class, 'logout'])
     ->middleware(['auth'])
