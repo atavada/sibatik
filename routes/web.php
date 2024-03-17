@@ -21,9 +21,17 @@ Route::get('/sign-in', function () {
 
 
 // User
-Route::get('/', function () {
-    return view('user.index');
-})->name('user.index');
+Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.index');
+Route::get('/about', [App\Http\Controllers\User\AboutController::class, 'index'])->name('user.about');
+Route::get('/contact', [App\Http\Controllers\User\ContactController::class, 'index'])->name('user.contact');
+
+Route::get('/catalog', function () {
+    return view('user.catalog');
+})->name('user.catalog');
+
+Route::get('/detail', function () {
+    return view('user.detail');
+})->name('user.detail');
 
 
 // Gemini AI
