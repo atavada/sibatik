@@ -62,10 +62,10 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a></li>
-								<li><a href="about">About</a></li>
+								<li class="{{ $type_menu === 'home' ? 'current-list-item' : '' }}"><a href="{{ route('user.index') }}">Home</a></li>
+								<li class="{{ $type_menu === 'about' ? 'current-list-item' : '' }}"><a href="about">About</a></li>
 								<li><a href="catalog">Catalog</a></li>
-								<li><a href="contact">Contact</a></li>
+								<li class="{{ $type_menu === 'contact' ? 'current-list-item' : '' }}"><a href="contact">Contact</a></li>
 								<li>
 									<div class="header-icons">
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
