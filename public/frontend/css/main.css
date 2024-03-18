@@ -1298,8 +1298,23 @@ a.cart-btn {
 }
 
 a.cart-btn:hover {
-    background-color: #051922;
+    background-color: #ffff;
     color: #f28123;
+}
+
+a.cart-btn-shoope:hover {
+    background-color: #ffff;
+    color: #f28123;
+}
+
+a.cart-btn-tokopedia:hover {
+    background-color: #fff;
+    color: #41b549;
+}
+
+a.cart-btn-wa:hover {
+    background-color: #128C7E ;
+    color: #ffff;
 }
 
 .recent-posts ul li {
@@ -1415,7 +1430,7 @@ a.mobile-show.search-bar-icon:hover {
 
 ----------------------------------------------------------------------------- */
 .hero-bg {
-    background-image: url(../img/hero-bg.jpg);
+    background-image: url(frontend/img/product-5.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1523,15 +1538,15 @@ input[type="submit"] {
 }
 
 .homepage-bg-1 {
-    background-image: url(../img/hero-bg.jpg);
+    background-image: url(frontend/img/product-5.jpg);
 }
 
 .homepage-bg-2 {
-    background-image: url(../img/hero-bg-2.jpg);
+    background-image: url(frontend/img/product-5.jpg);
 }
 
 .homepage-bg-3 {
-    background-image: url(../img/hero-bg-3.jpg);
+    background-image: url(frontend/img/product-5.jpg);
 }
 
 .homepage-slider {
@@ -2816,3 +2831,5 @@ table.order-details tbody td {
     vertical-align: middle;
     width: 100%;
 }
+
+
