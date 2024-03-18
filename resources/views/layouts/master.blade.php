@@ -64,7 +64,7 @@
 							<ul>
 								<li class="{{ $type_menu === 'home' ? 'current-list-item' : '' }}"><a href="{{ route('user.index') }}">Home</a></li>
 								<li class="{{ $type_menu === 'about' ? 'current-list-item' : '' }}"><a href="about">About</a></li>
-								<li><a href="catalog">Catalog</a></li>
+								<li class="{{ $type_menu === 'catalog' ? 'current-list-item' : '' }}"><a href="catalog">Catalog</a></li>
 								<li class="{{ $type_menu === 'contact' ? 'current-list-item' : '' }}"><a href="contact">Contact</a></li>
 								<li>
 									<div class="header-icons">

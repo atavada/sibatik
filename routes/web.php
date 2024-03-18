@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,23 +25,9 @@ Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->nam
 Route::get('/about', [App\Http\Controllers\User\AboutController::class, 'index'])->name('user.about');
 Route::get('/contact', [App\Http\Controllers\User\ContactController::class, 'index'])->name('user.contact');
 
-Route::get('/catalog', function () {
-    return view('user.catalog');
-})->name('user.catalog');
-
 Route::get('/detail', function () {
     return view('user.detail');
 })->name('user.detail');
-
-
-Route::get('/category/{slug}', [CategoryController::class, 'showProductsBySlug'])->name('category.products');
-
-
-
-Route::get('/catalog',  [App\Http\Controllers\ProductController::class, 'index'])->name('user.catalog');
-
-
-Route::get('/user/filter', 'ProductController@filterByCategory');
 
 
 // Gemini AI
