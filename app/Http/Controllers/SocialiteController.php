@@ -8,6 +8,11 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
+    public function index()
+    {
+        return view('auth.signin');
+    }
+
     public function redirect()
     {
         return Socialite::driver('google')->redirect();
