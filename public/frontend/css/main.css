@@ -12,28 +12,6 @@ Version: 1.0
 
 ----------------------------------------------------------------------------- */
 
-.filter-buttons .btn {
-    margin-right: 1cm;
-    margin-bottom: 50px;
-}
-
-.pagination-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination-buttons button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    margin: 0 5px;
-}
-
-
 html {
     font-size: 14px;
     font-weight: 400;
@@ -1313,7 +1291,7 @@ a.cart-btn-tokopedia:hover {
 }
 
 a.cart-btn-wa:hover {
-    background-color: #128C7E ;
+    background-color: #128c7e;
     color: #ffff;
 }
 
@@ -2831,5 +2809,3 @@ table.order-details tbody td {
     vertical-align: middle;
     width: 100%;
 }
-
-
