@@ -53,7 +53,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index" class="boxed-btn">
+							<a href="{{ route('user.index') }}" class="boxed-btn">
 								LOGO SIBATIK
 							</a>
 						</div>
@@ -63,9 +63,9 @@
 						<nav class="main-menu">
 							<ul>
 								<li class="{{ $type_menu === 'home' ? 'current-list-item' : '' }}"><a href="{{ route('user.index') }}">Home</a></li>
-								<li class="{{ $type_menu === 'about' ? 'current-list-item' : '' }}"><a href="about">About</a></li>
-								<li><a href="catalog">Catalog</a></li>
-								<li class="{{ $type_menu === 'contact' ? 'current-list-item' : '' }}"><a href="contact">Contact</a></li>
+								<li class="{{ $type_menu === 'about' ? 'current-list-item' : '' }}"><a href="{{ route('user.about') }}">About</a></li>
+								<li class="{{ $type_menu === 'catalog' ? 'current-list-item' : '' }}"><a href="{{ route('user.catalog') }}">Catalog</a></li>
+								<li class="{{ $type_menu === 'contact' ? 'current-list-item' : '' }}"><a href="{{ route('user.contact') }}">Contact</a></li>
 								<li>
 									<div class="header-icons">
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -135,10 +135,10 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index">Home</a></li>
-							<li><a href="about">About</a></li>
-							<li><a href="catalog">Catalog</a></li>
-							<li><a href="contact">Contact</a></li>
+							<li><a href="{{ route('user.index') }}">Home</a></li>
+							<li><a href="{{ route('user.about') }}">About</a></li>
+							<li><a href="{{ route('user.catalog') }}">Catalog</a></li>
+							<li><a href="{{ route('user.contact') }}">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -146,7 +146,7 @@
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Join us</h2>
 						<p>Join to our website to get the latest updates.</p>
-						<form action="index.html">
+						<form action="{{ route('auth.signin') }}">
 							<button type="submit" style="width: 100%">Sign up</button>
 						</form>
 					</div>
@@ -161,7 +161,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2024 - <a href="https://imransdesign.com/">Kelompok 2</a>,  All Rights Reserved.
+					<p>Copyrights &copy; 2024 - <a href="#">Kelompok 2</a>,  All Rights Reserved.
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">

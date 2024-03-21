@@ -46,8 +46,8 @@
                                     <th scope="col" style="text-align: center;width: 6%">NO.</th>
                                     <th scope="col">NAME</th>
                                     <th scope="col">EMAIL</th>
-                                    <th scope="col" style="width: 15%;text-align: center">STATUS</th>
-                                    <th scope="col" style="width: 15%;text-align: center">AKSI</th>
+                                    <th scope="col" style="width: 10%;text-align: center">STATUS</th>
+                                    <th scope="col" style="width: 20%;text-align: center">AKSI</th>
                                 </tr>
                                 </thead>
                                 <tbody>
