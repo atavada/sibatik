@@ -11,8 +11,8 @@
 							<p class="subtitle">Batik Tenun Ikat</p>
 							<h1>Tenun Mulya</h1>
 							<div class="hero-btns">
-								<a href="shop.html" class="boxed-btn">Product Collection</a>
-								<a href="contact.html" class="bordered-btn">Contact Us</a>
+								<a href="{{ route('user.catalog') }}" class="boxed-btn">Product Collection</a>
+								<a href="{{ route('user.contact') }}" class="bordered-btn">Contact Us</a>
 							</div>
 						</div>
 					</div>
@@ -80,36 +80,18 @@
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image " >
-							<a href="single-product.html"><img src="frontend/img/products/product-1.jpg" alt="" width="200" height="300"></a>
+				@foreach ($products as $product)
+					<div class="col-lg-4 col-md-6 text-center">
+						<div class="single-product-item">
+							<div class="product-image" >
+								<a href="{{ route('user.catalog.product', $product->slug) }}"><img src="{{ $product->image }}" alt="{{ $product->slug }}" width="200" height="300"></a>
+							</div>
+							<h3>{{ $product->name }}</h3>
+							<p class="product-price">Rp. {{ $product->price }}</p>
+							<a href="{{ route('user.catalog.product', $product->slug) }}" class="cart-btn">Go to Detail</a>
 						</div>
-						<h3>Kembang Seroja</h3>
-						<p class="product-price"><span>Per 90cm&#215;250cm</span></p>
-						<a href="cart.html" class="cart-btn">Go to Detail</a>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="frontend/img/products/product-2.jpg" alt=""></a>
-						</div>
-						<h3><br><br>Waist Bag</h3>
-						<p class="product-price"><span>Waistbag Kuning/Ungu/Merah </p>
-						<a href="cart.html" class="cart-btn">Go to Detail</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="frontend/img/products/product-3.jpg" alt=""></a>
-						</div>
-						<h3><br>Mini Backpack</h3>
-						<p class="product-price"><span>Mini Backpack Merah & Biru</span></p>
-						<a href="cart.html" class="cart-btn">Go to Detail</a>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
@@ -137,7 +119,7 @@
                     <p>Mari bersama-sama kita cintai produk dalam negeri dan dukung UMKM lokal!
 						Bersama, kita bisa membangun negeri yang lebih kuat dan sejahtera!
 						#CintaProdukDalamNegeri #DukungUMKMLokal #BanggaBuatanIndonesia</p>
-                	<a href="cart.html" class="cart-btn mt-3">Lihat Katalog</a>
+                	<a href="{{ route('user.catalog') }}" class="cart-btn mt-3">Lihat Katalog</a>
                 </div>
             </div>
         </div>
@@ -204,16 +186,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<div class="abt-bg"></div>
+					<div class="abt-img">
+						<img src="{{ $about->image }}" alt="">
+					</div>
 				</div>
 				<div class="col-lg-6 col-md-12">
 					<div class="abt-text">
 						<p class="top-sub">Since Year 2016</p>
-						<h2>We are  <span class="orange-text">Tenun Mulya</span></h2>
-						<p>Dengan tujuan melestarikan dan membangkitkan kembali kejayaan industri tenun tradisional di Desa Bandar yang sudah ada sejak tahun 1940-an, Mulya diangkat dari nama “ Mulyadi “ untuk mengenang jasa beliau sebagai pengrajin tenun pada tahun 1950-1970an.
+						<h2>We are  <span class="orange-text">{{ $about->title }}</span></h2>
+						<p>
+							{!! $about->description !!}
 						</p>
-						<p>Sesuai dengan namanya “ Mulya “ yang berarti unggul dan bermutu tinggi. Dengan niat mulia melestarikan produk tradisional khas Kota Kediri, Tenun Mulya ingin menjadi produk tradisional unggulan Bangsa Indonesia. </p>
-						<a href="about.html" class="boxed-btn mt-4">Selengkapnya</a>
+						<a href="{{ route('user.about') }}" class="boxed-btn mt-4">Selengkapnya</a>
 					</div>
 				</div>
 			</div>
@@ -231,7 +215,7 @@
 						Pengen Couple Tenun dengan pasangan ?
 						Pengen punya tenun kembar 1 tongkrongan ? <br>Tenun Mulya Siap menerima pesanan custom mu, tunggu apa lagi cepat hubungi admin untuk lebih lanjut!
 						</p>
-					<a href="shop.html" class="cart-btn btn-lg">Admin</a>
+					<a href="https://api.whatsapp.com/send/?phone=62881027990757&text&type=phone_number&app_absent=0" class="cart-btn btn-lg">Admin</a>
 				</div>
 				<div class="col-md-6">
 					<img src="frontend/img/product-5.jpg" alt="Image Description" class="img-fluid">
@@ -239,11 +223,9 @@
 			</div>
 		</div>
 	</section>
-	
-	
 	<!-- end shop banner -->
     
-<!-- latest news -->
+	<!-- latest news -->
 	<div class="latest-news pt-150 pb-150">
 		<div class="container">
 
