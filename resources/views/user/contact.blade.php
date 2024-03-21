@@ -24,18 +24,48 @@
 				<div class="col-lg-8 mb-5 mb-lg-0">
 					<div class="form-title">
 						<h2>Have you any question?</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
+						{{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p> --}}
 					</div>
-				 	<div id="form_status"></div>
+				<div id="form_status"></div>
 					<div class="contact-form">
-						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+						<form method="POST" id="fruitkha-contact" action="{{ route('user.contact.store') }}">
+							@csrf
+							
 							<p>
-								<input type="text" placeholder="Name" name="name" id="name">
-								<input type="email" placeholder="Email" name="email" id="email">
+								<input class="mr-2 @error('name') is-invalid @enderror" type="text" placeholder="Name" name="name" id="name" value="{{ old('name') }}">
+								<input class="@error('email') is-invalid @enderror" type="email" placeholder="Email" name="email" id="email" value="{{ old('email') }}">
 							</p>
-							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
-							<input type="hidden" name="token" value="FsWga4&@f6aw" />
-							<p><input type="submit" value="Submit"></p>
+							<p>
+								<textarea class="@error('message') is-invalid @enderror" name="message" id="message" cols="30" rows="10" placeholder="Message">{{ old('message') }}</textarea>
+							</p>
+							@error('name')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+							@enderror
+							@error('email')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+							@enderror
+							@error('message')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+							@enderror
+							
+							@if (session('success'))
+								<div class="alert alert-success">
+									{{ session('success') }}
+								</div>
+							@endif
+							
+							@auth
+								<p class="mt-3"><input type="submit" value="submit"></p>
+							@endauth
+							@guest
+								<p class="mt-3"><a href="{{ route('auth.signin') }}" class="boxed-btn">Submit</a></p>
+							@endguest
 						</form>
 					</div>
 				</div>
