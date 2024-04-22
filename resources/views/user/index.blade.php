@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- hero area -->
-	<div class="hero-area" style="background-image: url('frontend/img/bg.jpg'); background-size: cover; background-position: center; padding: 100px 0; text-align: center;">>
+	<div class="hero-area" style="background-image: url('frontend/img/bg.jpg'); background-size: cover; background-position: center; padding: 100px 0; text-align: center;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 offset-lg-2 text-center">
@@ -11,8 +11,8 @@
 							<p class="subtitle">Batik Tenun Ikat</p>
 							<h1>Tenun Mulya</h1>
 							<div class="hero-btns">
-								<a href="shop.html" class="boxed-btn">Product Collection</a>
-								<a href="contact.html" class="bordered-btn">Contact Us</a>
+								<a href="catalog" class="boxed-btn">Product Collection</a>
+								<a href="ulasan" class="bordered-btn">Contact Us</a>
 							</div>
 						</div>
 					</div>
@@ -137,7 +137,7 @@
                     <p>Mari bersama-sama kita cintai produk dalam negeri dan dukung UMKM lokal!
 						Bersama, kita bisa membangun negeri yang lebih kuat dan sejahtera!
 						#CintaProdukDalamNegeri #DukungUMKMLokal #BanggaBuatanIndonesia</p>
-                	<a href="cart.html" class="cart-btn mt-3">Lihat Katalog</a>
+                	<a href="catalog" class="cart-btn mt-3">Lihat Katalog</a>
                 </div>
             </div>
         </div>
@@ -213,7 +213,7 @@
 						<p>Dengan tujuan melestarikan dan membangkitkan kembali kejayaan industri tenun tradisional di Desa Bandar yang sudah ada sejak tahun 1940-an, Mulya diangkat dari nama “ Mulyadi “ untuk mengenang jasa beliau sebagai pengrajin tenun pada tahun 1950-1970an.
 						</p>
 						<p>Sesuai dengan namanya “ Mulya “ yang berarti unggul dan bermutu tinggi. Dengan niat mulia melestarikan produk tradisional khas Kota Kediri, Tenun Mulya ingin menjadi produk tradisional unggulan Bangsa Indonesia. </p>
-						<a href="about.html" class="boxed-btn mt-4">Selengkapnya</a>
+						<a href="about" class="boxed-btn mt-4">Selengkapnya</a>
 					</div>
 				</div>
 			</div>
@@ -231,7 +231,7 @@
 						Pengen Couple Tenun dengan pasangan ?
 						Pengen punya tenun kembar 1 tongkrongan ? <br>Tenun Mulya Siap menerima pesanan custom mu, tunggu apa lagi cepat hubungi admin untuk lebih lanjut!
 						</p>
-					<a href="shop.html" class="cart-btn btn-lg">Admin</a>
+					<a href="https://api.whatsapp.com/send/?phone=62881027990757&text&type=phone_number&app_absent=0" class="cart-btn btn-lg">Admin</a>
 				</div>
 				<div class="col-md-6">
 					<img src="frontend/img/product-5.jpg" alt="Image Description" class="img-fluid">

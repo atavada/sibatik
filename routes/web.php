@@ -24,6 +24,7 @@ Route::get('/sign-in', function () {
 Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->name('user.index');
 Route::get('/about', [App\Http\Controllers\User\AboutController::class, 'index'])->name('user.about');
 Route::get('/contact', [App\Http\Controllers\User\ContactController::class, 'index'])->name('user.contact');
+Route::get('/ulasan', [App\Http\Controllers\User\UlasanController::class, 'index'])->name('user.ulasan');
 
 Route::get('/catalog', function () {
     return view('user.catalog');
