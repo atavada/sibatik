@@ -53,8 +53,8 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="{{ route('user.index') }}" class="boxed-btn">
-								LOGO SIBATIK
+							<a href="{{ route('user.index') }}" >
+								<img src="{{ asset('tenunmulya.png') }}" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -66,6 +66,7 @@
 								<li class="{{ $type_menu === 'about' ? 'current-list-item' : '' }}"><a href="{{ route('user.about') }}">About</a></li>
 								<li class="{{ $type_menu === 'catalog' ? 'current-list-item' : '' }}"><a href="{{ route('user.catalog') }}">Catalog</a></li>
 								<li class="{{ $type_menu === 'contact' ? 'current-list-item' : '' }}"><a href="{{ route('user.contact') }}">Contact</a></li>
+								<li class="{{ $type_menu === 'rating' ? 'current-list-item' : '' }}"><a href="{{ route('user.rating') }}">Rating</a></li>
 								<li>
 									<div class="header-icons">
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -139,6 +140,7 @@
 							<li><a href="{{ route('user.about') }}">About</a></li>
 							<li><a href="{{ route('user.catalog') }}">Catalog</a></li>
 							<li><a href="{{ route('user.contact') }}">Contact</a></li>
+							<li><a href="{{ route('user.rating') }}">Rating</a></li>
 						</ul>
 					</div>
 				</div>
