@@ -32,19 +32,20 @@
 						<p class="single-product-pricing">Rp. {{ $product->price }}</p>
 						<p>{!! $product->description !!}</p>
 						<div class="single-product-form">
-                            <div class="cart-btn">
+							<p class="mb-2"><strong>Link Pembelian: </strong></p>
+                            <div class="cart-btn mb-3">
                                 <a href="{{ $product->shopee_url }}" class="cart-btn" >Shopee</a>
                                 <a href="{{ $product->tokopedia_url }}" class="cart-btn">Tokopedia</a>
                                 <a href="https://api.whatsapp.com/send/?phone=62881027990757&text&type=phone_number&app_absent=0" class="cart-btn">By Admin</a>                            
                             </div>
                             
-							<p><strong>Kategori: </strong>
+							<div>
 								@foreach ($categories as $category)
 									@if ($product->category_id == $category->id)
-										{{ $category->name }}
+										<p style="color: coral"><strong>{{ $category->name }}</strong></p>
 									@endif	
 								@endforeach
-							</p>
+							</div>
 						</div>
 					</div>
 				</div>

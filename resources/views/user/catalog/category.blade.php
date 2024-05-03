@@ -39,6 +39,7 @@
 
 			<div class="row product-lists">
 				@foreach ($products as $product)
+					@if ($product->status == 'publish')
 						<div class="col-lg-4 col-md-6 text-center strawberry">
 							<div class="single-product-item">
 								<div class="product-image">
@@ -51,10 +52,11 @@
 								<a href="{{ route('user.catalog.product', $product->slug) }}" class="cart-btn">Go to Detail</a>
 							</div>
 						</div>
+					@endif
 				@endforeach
 			</div>
 
-			<div class="row">
+			{{-- <div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="pagination-wrap">
 						<ul>
@@ -66,7 +68,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	<!-- end products -->

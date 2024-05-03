@@ -116,8 +116,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<h3>Temukan Tenun Mulya di Instagram!</h3>
-					<p>Sosial media tidak hanya sebagai perantara untuk menghubungkan yang jauh. 
+					<h3 class="mb-4">Temukan Tenun Mulya di Instagram!</h3>
+					<p class="mb-4">Sosial media tidak hanya sebagai perantara untuk menghubungkan yang jauh. 
 						Tidak hanya sekedar menjadi pemberitaan media luar, media sosial memiliki peran krusial dalam melakukan pemasaran. 
 						Tenun Mulya ikut ambil alih dalam pergerakan digitalisisasi ini. 
 						Dengan ada nya akun media sosial dapat menjadi media dalam memperluas pasar produk tanah air!
@@ -125,7 +125,7 @@
 					<p>Mari bersama-sama kita cintai produk dalam negeri dan dukung UMKM lokal!
 						Bersama, kita bisa membangun negeri yang lebih kuat dan sejahtera!
 						#CintaProdukDalamNegeri #DukungUMKMLokal #BanggaBuatanIndonesia</p>
-					<a href="https://www.instagram.com/tenunmulya/" class="cart-btn btn-lg">Instagram</a>
+					<a href="https://www.instagram.com/tenunmulya/" class="cart-btn btn-lg">Go to Instagram</a>
 				</div>
 				<div style="margin-left: 200px;">
 					<img src="frontend/img/mobile.png" alt="Image Description" class="img-fluid" width="240" height="210" style="margin-right: 100px;" >
