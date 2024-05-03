@@ -2809,3 +2809,93 @@ table.order-details tbody td {
     vertical-align: middle;
     width: 100%;
 }
+
+.error-text {
+    color: red;
+}
+
+/* RATING */
+
+/* Import Google font - Poppins */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+.rating-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 25px 50px 35px;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    font-family: "Poppins", sans-serif;
+}
+.rating-box header {
+    font-size: 22px;
+    color: #dadada;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.rating-box .stars {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Atur jarak antara star */
+}
+.rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    color: #ddd; /* Personal choice */
+    font-size: 30px;
+    margin-left: -15px;
+    display: flex;
+    justify-content: center; /* Posisikan elemen secara horizontal di tengah */
+    align-items: center; /* Posisikan elemen secara vertical di tengah */
+}
+.rating input {
+    display: none;
+}
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked + label,
+.rating input:checked + label ~ label {
+    color: #ffc107; /* Personal color choice. Lifted from Bootstrap 4 */
+    font-size: 30px;
+}
+.front-stars,
+.back-stars,
+.star-rating {
+    display: flex;
+}
+
+.star-rating {
+    align-items: left;
+    font-size: 1.5em;
+    justify-content: left;
+    margin-left: -5px;
+}
+
+.back-stars {
+    color: #ccc;
+    position: relative;
+}
+
+.front-stars {
+    color: #ffbc0b;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: all 0.5s;
+}
+
+.percent {
+    color: #bb5252;
+    font-size: 1.5em;
+}
+
+.button {
+    text-align: center;
+}
+
+.button button {
+    display: inline-block;
+}
