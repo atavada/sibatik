@@ -35,22 +35,24 @@
 
 			<div class="row product-lists">
 				@foreach ($products as $product)
-					<div class="col-lg-4 col-md-6 text-center strawberry">
-						<div class="single-product-item">
-							<div class="product-image">
-								<a href="{{ route('user.catalog.product', $product->slug) }}">
-									<img src="{{ $product->image }}" alt="{{ $product->slug }}">
-								</a>
+					@if ($product->status == 'publish')
+						<div class="col-lg-4 col-md-6 text-center strawberry">
+							<div class="single-product-item">
+								<div class="product-image">
+									<a href="{{ route('user.catalog.product', $product->slug) }}">
+										<img src="{{ $product->image }}" alt="{{ $product->slug }}">
+									</a>
+								</div>
+								<h3>{{ $product->name }}</h3>
+								<p class="product-price"> Rp. {{ $product->price }} </p>
+								<a href="{{ route('user.catalog.product', $product->slug) }}" class="cart-btn">Go to Detail</a>
 							</div>
-							<h3>{{ $product->name }}</h3>
-							<p class="product-price"> Rp. {{ $product->price }} </p>
-							<a href="{{ route('user.catalog.product', $product->slug) }}" class="cart-btn">Go to Detail</a>
 						</div>
-					</div>
+					@endif
 				@endforeach
 			</div>
 			
-			<div class="row">
+			{{-- <div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="pagination-wrap">
 						<ul>
@@ -62,7 +64,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	<!-- end products -->

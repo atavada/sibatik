@@ -81,16 +81,18 @@
 
 			<div class="row">
 				@foreach ($products as $product)
-					<div class="col-lg-4 col-md-6 text-center">
-						<div class="single-product-item">
-							<div class="product-image" >
-								<a href="{{ route('user.catalog.product', $product->slug) }}"><img src="{{ $product->image }}" alt="{{ $product->slug }}" width="200" height="300"></a>
+					@if ($product->status == 'publish')
+						<div class="col-lg-4 col-md-6 text-center">
+							<div class="single-product-item">
+								<div class="product-image">
+									<a href="{{ route('user.catalog.product', $product->slug) }}"><img src="{{ $product->image }}" alt="{{ $product->slug }}" width="200" height="300"></a>
+								</div>
+								<h3>{{ $product->name }}</h3>
+								<p class="product-price">Rp. {{ $product->price }}</p>
+								<a href="{{ route('user.catalog.product', $product->slug) }}" class="cart-btn">Go to Detail</a>
 							</div>
-							<h3>{{ $product->name }}</h3>
-							<p class="product-price">Rp. {{ $product->price }}</p>
-							<a href="{{ route('user.catalog.product', $product->slug) }}" class="cart-btn">Go to Detail</a>
 						</div>
-					</div>
+					@endif
 				@endforeach
 			</div>
 		</div>
@@ -185,21 +187,22 @@
 	<div class="abt-section mb-150">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<div class="abt-img">
-						<img src="{{ $about->image }}" alt="">
+				@foreach ($abouts as $about)
+					<div class="col-lg-6 col-md-12">
+						<div class="abt-img">
+							<img src="{{ $about->image }}" alt="">
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="abt-text">
-						<p class="top-sub">Since Year 2016</p>
-						<h2>We are  <span class="orange-text">{{ $about->title }}</span></h2>
-						<p>
-							{!! $about->description !!}
-						</p>
-						<a href="{{ route('user.about') }}" class="boxed-btn mt-4">Selengkapnya</a>
+					<div class="col-lg-6 col-md-12">
+						<div class="abt-text">
+							<h2>We are  <span class="orange-text">{{ $about->title }}</span></h2>
+							<p>
+								{!! $about->description !!}
+							</p>
+							<a href="{{ route('user.about') }}" class="boxed-btn mt-4">Selengkapnya</a>
+						</div>
 					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>

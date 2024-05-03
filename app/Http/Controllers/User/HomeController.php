@@ -12,8 +12,8 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at', 'desc')->take(3)->get();
-        $about = About::first();
+        $abouts = About::get();
 
-        return view('user.index', compact('products', 'about'), ['type_menu' => 'home']);
+        return view('user.index', compact('products', 'abouts'), ['type_menu' => 'home']);
     }
 }
