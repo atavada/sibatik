@@ -48,12 +48,10 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image' => 'required|max:2048',
+            'image' => 'required|max:5120',
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            // 'shopee_url' => 'required',
-            // 'tokopedia_url' => 'required',
             'category_id' => 'required'
         ]);
 
