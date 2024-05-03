@@ -31,8 +31,9 @@
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
+                                    <th scope="col">NAMA</th>
                                     <th scope="col">EMAIL</th>
-                                    <th scope="col">RATING</th>
+                                    <th scope="col" style="width: 15%;text-align: center">RATING</th>
                                     <th scope="col">DESKRIPSI</th>
                                     <th scope="col" style="width: 15%;text-align: center">CREATED AT</th>
                                     <th scope="col" style="width: 15%;text-align: center">AKSI</th>
@@ -41,8 +42,9 @@
                                 <tbody>
                                 @foreach ($ratings as $no => $rating)
                                     <tr>
+                                        <td>{{ $rating->name }}</td>
                                         <td>{{ $rating->user->email }}</td>
-                                        <td class="text-center">{{ $rating->star }}/5</td>
+                                        <td class="text-center">{{ $rating->rating }}/5</td>
                                         <td>{{ $rating->content }}</td>
                                         <td class="text-center">{{ $rating->created_at }}</td>
                                         <td class="text-center">

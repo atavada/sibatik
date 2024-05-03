@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->integer('star');
+            $table->integer('rating');
+            $table->text('name');
             $table->string('content');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
