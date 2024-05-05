@@ -119,7 +119,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About Tenun Mulya</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Tenun Mulya hadir meramaikan industri tenun di tanah air. Dengan niat mulia melestarikan produk tradisional khas Kota Kediri. Kamu bisa menemukan banyak ragam corak tenun ikat unik dan cantik buatan Tenun Mulya, lho.</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
@@ -127,7 +127,7 @@
 						<h2 class="widget-title">Address</h2>
 						<ul>
 							<li>Jl. Bandar Lor Gg. IX A No.15, Bandar Lor, Kec. Mojoroto, Kota Kediri, Jawa Timur 64114.</li>
-							<li>support@tenunmulya.com</li>
+							<li>tenunmulya@gmail.com</li>
 							<li>+62 8810 2799 0757</li>
 						</ul>
 					</div>

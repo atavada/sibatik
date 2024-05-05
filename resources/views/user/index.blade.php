@@ -139,9 +139,9 @@
 								<img src="frontend/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Saira Hakim <span>Local shop owner</span></h3>
+								<h3>Ir. H. Joko Widodo <span>Presiden RI</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" UMKM kita harus terus naik kelas, harus go digital, harus go international, dan menguasai pasar lokal yang kita miliki karena pasar kita besar sekali. Tetapi juga, tidak melupakan yang namanya pasar ekspor dan pasar global "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -153,9 +153,9 @@
 								<img src="frontend/img/avaters/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>David Niph <span>Local shop owner</span></h3>
+								<h3>Dr. H. Sandiaga Salahuddin Uno, B.B.A., M.B.A., <span>Menteri Pariwisata dan Ekonomi Kreatif</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" UMKM memiliki peran besar dalam menghadapi resesi global karena UMKM telah berkontribusi besar terhadap PDB, Penyerapan tenaga kerja banyak dilakukan oleh UMKM, UMKM merupakan pasar potensial bagi industri jasa keuangan, UMKM cepat dalam mencari potensi pasar ekspor, serta UMKM menyerap kredit terbesar "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -167,9 +167,9 @@
 								<img src="frontend/img/avaters/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Jacob Sikim <span>Local shop owner</span></h3>
+								<h3>Tenun Mulya<span>Owner</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									"Kesempurnaan kain tenun Mulya tidak terlepas dari tangan-tangan ahli yang bekerja dengan sepenuh hati, untuk seluruh pecinta tenun Mulya"
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
